@@ -1,0 +1,172 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <style>
+          #navibar{
+            background-color:#dba8a1;
+            }  
+          #startBtn{
+            border-radius: 75%;
+            background-color:#dba8a1;
+            border-radius: 25px;
+            border: 2px;
+            padding: 20px;
+            width: 200px;
+            height: 10px;
+            line-height: 0px;
+          }
+          body{
+            background :linear-gradient(180deg,#e9d3cc 23%, #f9ece3 23%) ;
+            text-align: center;
+            min-height : 400px;
+            color: 6C4A4A;
+          }
+          #ddmenu{
+            border-radius:36px;
+            display:inline-block;
+            overflow:hidden;
+            background:#ffffff;
+            border:1px solid #ffffff;
+          }
+          .form-control{
+            height:40px;
+            border:0px;
+            outline:none;
+            }
+        </style>
+        <title>JobCupid</title>
+        <nav id="navibar" class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="" style="color: #6c4a4a">JobCupid</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link" href="/home" style="color: white;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: white">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: white">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="color: white">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row-2">
+              <div class="row">
+                <div class="col-6 text-left">
+                  <h2>
+                      {% block jobTitle %}{% endblock %}
+                  </h2>
+  
+                  <h3>
+                      {% block company %}{% endblock %}
+                  </h3>
+                </div>
+              </div>
+              <div class="row" style="padding-top: 1%">
+                <div class="col-1"><a type="button" class="btn-lg btn-warning" target="_blank" style="background-color:BF7B71;border-color:BF7B71; color: white; padding-top: 2%;" href="{{joblink}}">Apply</a></div>
+              </div>
+
+            </div>
+            <br />
+            <br />
+            <br>
+            <div class="row">
+              <div class="col text-left">
+                <h5>
+                    About The Job
+                </h5>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-left">
+                <h7>
+                  {% block jobDescription %}{% endblock %}
+              </h7>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col text-left">
+                <h5>
+                    Key responsibilities
+                </h5>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col text-left">
+              <h7>
+                {% block responsibilities %}{% endblock %}
+            </h7>
+            </div>
+          </div>
+
+          <br />
+          <div class="row">
+            <div class="col text-left">
+              <h5>
+                  Preferred Qualifications
+              </h5>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-left">
+              <h7>
+                {% block qualifications %}{% endblock %}
+              </h7>
+            </div>
+          </div>
+
+          <br />
+            <br>
+          <div class="row">
+            <div>
+              <div class="col text-left">
+                <h5>
+                    Other Information
+                </h5>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="row">
+          <div class="col text-left">
+            <h7>
+              {% block other %}{% endblock %}
+            </h7>
+          </div>
+        </div>
+        <br />
+            <div class="row align-items-end">
+              
+              <div class="col" style="padding-top: 3%; padding-bottom: 5%;">
+                <a id="startBtn" type="button" class="btn btn-secondary" href="{{fpage}}">Back</a>
+            </div>
+              
+              <div class="col" style="padding-top: 3%; padding-bottom: 5%;">
+                    <a id="startBtn" type="button" class="btn btn-secondary" href="{{page}}">Next</a>
+                </div>
+                
+              </div>
+          </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

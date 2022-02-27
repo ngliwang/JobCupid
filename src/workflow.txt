@@ -1,0 +1,30 @@
+workflow
+
+i) questions/inputs from users
+
+looking for what type of job?
+dropdown box (full time/part time/internship/summer internship)
+
+which industry do you wna to work in?
+dropdown box (choose from tech, engineering, banking, marketing, etc)
+
+get users top 5 skillsets
+which one of these skillsets are you most confident in? (python, java, C, C++, assembly)
+
+get users top 5 personality traits -
+which one of these traits best describes you? (team-player, independent
+
+inputs: ranking of each skillset (1-5), ranking of each personality trait (1-5) 
+
+ii) scoring jobs based on part i
+
+score the job offers based on:
+1. importance of skillsets (rank 1-5)
+2. number of occurance of words (more occurances == better)
+
+
+return the top 10 job offers (with highest scores)
+
+
+ALGORITHM
+log-sum-exp? https://en.wikipedia.org/wiki/LogSumExp
